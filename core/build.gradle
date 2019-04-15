@@ -1,0 +1,13 @@
+apply plugin: "java"
+sourceCompatibility = 1.8
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+sourceSets.main.java.srcDirs = ["src/"]
+configurations.all { exclude group: 'com.android.support', module: 'support-v4' }
+
+eclipse.project {
+    name = appName + "-core"
+}
+dependencies {
+
+    implementation files('sac-1.0.3.jar')
+}
